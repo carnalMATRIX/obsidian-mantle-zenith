@@ -1,0 +1,33 @@
+@use "variables" as *;
+
+/* Lists */
+ul, ol {
+    padding-inline-start: 1.5rem;
+    margin-bottom: $list-spacing;
+}
+
+li {
+    margin-bottom: calc($list-spacing / 2);
+}
+
+/* Tasks */
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    width: $task-checkbox-size;
+    height: $task-checkbox-size;
+    margin-right: 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Task Status Styling */
+.is-checked {
+    color: $task-complete-color;
+    text-decoration: line-through;
+}
+
+/* Custom Task Markers (Optional, requires specific Obsidian settings or plugins) */
+/* Example for [!] important: .task-list-item[data-task="!"] */

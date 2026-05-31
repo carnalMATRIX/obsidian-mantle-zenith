@@ -1,0 +1,544 @@
+@use "variables" as *;
+
+.workspace-tab-header-inner {
+    padding-bottom: 4px !important;
+    padding-top: 4px !important;
+}
+
+.workspace-tab-header-inner-title {
+    padding-top: 1px !important;
+}
+
+/* --- Graph View Styling --- */
+body {
+    // Default Nodes (Mapped to H6 color: Muted Blue-Gray)
+    --graph-node: #{$h6-color};
+
+    // Connecting Lines (Mapped to H5 color: Deep Blue)
+    --graph-line: #{$h5-color};
+
+    // Current/Focused Document Node (Mapped to H4 color: Indigo)
+    --graph-node-focused: #{$h4-color};
+}
+
+/* Sidebars */
+.workspace-split.mod-right-split {
+    background-color: var(--background-secondary);
+}
+
+/* --- Cosmic Wave Active State --- */
+@keyframes cosmic-wave {
+    0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+}
+
+/* Status Bar */
+.status-bar {
+    background-color: var(--background-secondary);
+    border-top: 1px solid var(--divider-color);
+    font-size: 0.85em;
+}
+
+/* Modals & Prompts */
+.modal, .prompt {
+    border-radius: var(--border-radius-modal);
+    box-shadow: var(--shadow-premium);
+    border: 1px solid var(--divider-color);
+    background-color: var(--background-primary);
+    backdrop-filter: blur(16px);
+    transition: var(--tr-smooth);
+
+    @supports (backdrop-filter: blur(16px)) {
+        background-color: var(--container-bg);
+        opacity: 0.98;
+    }
+}
+
+.modal-title,
+.modal h2,
+.modal-content h2 {
+    font-family: 'Google Sans', var(--font-interface) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--divider-color);
+    border-radius: 10px;
+    transition: var(--tr-smooth);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-muted);
+}
+
+/* Interactive Element Transitions */
+button {
+    transition: var(--tr-quick);
+    border-radius: var(--border-radius-button) !important;
+    
+    &:hover {
+        transform: translateY(-0.5px);
+        filter: brightness(1.05);
+    }
+    &:active {
+        transform: translateY(0) scale(0.97);
+    }
+}
+
+/* --- Workspace Tab Headers (Floating Capsule Redesign) --- */
+
+.workspace-tab-header-container {
+    background-color: transparent !important;
+    border-bottom: none !important; /* Removed global border */
+    height: 38px !important; 
+    display: flex !important;
+    align-items: center !important;
+    overflow: visible !important;
+}
+
+/* Apply bottom border ONLY to sidebars */
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+    border-bottom: 1px solid var(--divider-color) !important;
+}
+
+.mod-left-split .workspace-tab-header-container {
+    margin-top: 2px !important;
+}
+
+.mod-root .workspace-tab-header,
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header {
+    background-color: var(--background-primary) !important;
+    border: 1px solid var(--divider-color) !important;
+    border-radius: 10px !important; 
+    margin: 0 4px !important;
+    margin-top: 3px !important;
+    margin-bottom: 4px !important;
+    height: 26px !important; 
+    align-self: center !important;
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 2px !important; 
+    cursor: pointer !important; /* Added cursor pointer for all tabs */
+    
+    /* Default shadow (Subtle light mode pink glow on top and sides) */
+    box-shadow: 0 -3px 8px -1px rgba(216, 27, 96, 0.12) !important; 
+
+    .workspace-tab-header-inner {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 100% !important;
+        padding: 0 5px !important;
+    padding-left: 6px !important;
+    padding-right: 1px !important;
+    cursor: pointer !important; /* Ensure inner element also has pointer */
+    }
+
+    /* Disable native curves */
+    .workspace-tab-header-inner::before,
+    .workspace-tab-header-inner::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+        background-color: var(--background-modifier-hover) !important;
+    }
+
+    &.is-active {
+        border-color: var(--interactive-accent) !important;
+        background-color: transparent !important; 
+        color: var(--interactive-accent) !important;
+        box-shadow: 0 -4px 12px -1px rgba(216, 27, 96, 0.4) !important; /* Pink glow on top and sides */
+
+        .workspace-tab-header-inner-title,
+        .workspace-tab-header-inner-icon {
+            color: var(--interactive-accent) !important;
+        }
+
+        &::before {
+            display: none !important;
+        }
+    }
+}
+
+/* Force active styling for Right Sidebar specifically using the provided path */
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active {
+    border: 1px solid var(--interactive-accent) !important;
+    border-radius: 10px !important; /* Added border-radius */
+    border-color: var(--interactive-accent) !important;
+    background-color: transparent !important;
+    color: var(--interactive-accent) !important;
+    box-shadow: 0 -4px 12px -1px rgba(216, 27, 96, 0.4) !important; /* Pink glow on top and sides */
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+    color: var(--interactive-accent) !important;
+}
+
+/* --- INDEPENDENT TAB ACCENT STYLING --- */
+
+/* 1. Main Page Tabs (Middle Section) */
+.workspace-split.mod-root .workspace-tab-header.is-active::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    background-color: var(--background-primary) !important;
+    box-shadow: 0 0 0 20px var(--background-primary) !important;
+    width: 84px !important;
+    right: -10% !important;
+    transform: translateY(5px) !important;
+    z-index: -1 !important;
+    pointer-events: none !important; /* Prevent overlap issues */
+}
+
+/* 2. Sidebar Menu Tabs (Files / Search / etc.) */
+.mod-left-split .workspace-tab-header.is-active::after,
+.mod-right-split .workspace-tab-header.is-active::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    background-color: var(--background-secondary) !important;
+    box-shadow: 0 0 0 20px var(--background-secondary) !important;
+    width: 4px !important;
+    right: 23% !important;
+    transform: translateY(5px) !important;
+    z-index: 5 !important;
+    pointer-events: none !important; /* Prevent overlap issues */
+}
+
+/* --- Sidebar specific header inner padding adjustments --- */
+
+/* Dark Mode Tab Shadow Adjustments */
+.theme-dark .mod-root .workspace-tab-header,
+.theme-dark .mod-left-split .workspace-tab-header,
+.theme-dark .mod-right-split .workspace-tab-header {
+    box-shadow: 0 -3px 8px -1px rgba(126, 87, 194, 0.15) !important; /* Subtle indigo glow on top and sides */
+}
+
+/* Add indigo glow to active tabs in dark mode */
+.theme-dark .workspace-tab-header.is-active {
+    box-shadow: 0 -4px 12px -1px rgba(126, 87, 194, 0.45) !important; /* Indigo glow on top and sides */
+}
+
+/* Dark Mode Tab Color Adjustments (Indigo instead of Pink) and glow shadow */
+.theme-dark .workspace-tab-header.is-active,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active {
+    border-color: #7e57c2 !important; /* Indigo accent */
+    color: #b39ddb !important;       /* Light indigo text */
+    box-shadow: 0 -4px 12px -1px rgba(126, 87, 194, 0.45) !important; /* Indigo glow on top and sides */
+}
+
+.theme-dark .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-dark .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+    color: #b39ddb !important;
+}
+
+/* Sidebar specific header adjustments */
+.mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner, 
+.mod-right-split .workspace-tab-header-container .workspace-tab-header-container-inner {
+    padding: 1px 0 7px !important;
+    margin: 6px 0 0 0 !important;
+    margin-bottom: -2px !important;
+    gap: 3px !important;
+    overflow: visible !important;
+}
+
+/* Sidebar specific header inner padding adjustments */
+.mod-left-split .workspace-tab-header .workspace-tab-header-inner {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+
+/* Right Sidebar specific header adjustments */
+.mod-right-split .workspace-tab-header {
+    margin: 0 1px !important;
+    margin-top: 3px !important;
+    margin-bottom: 4px !important;
+}
+
+.mod-right-split .workspace-tab-header .workspace-tab-header-inner {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+}
+
+/* --- Sidebar Toggle Buttons (Floating Style) --- */
+.sidebar-toggle-button.mod-right,
+div.sidebar-toggle-button.mod-right,
+.workspace-ribbon.mod-right .sidebar-toggle-button {
+    top: 1px !important;
+    right: 2px !important;
+}
+
+.sidebar-toggle-button.mod-right,
+div.sidebar-toggle-button.mod-right,
+.workspace-ribbon.mod-right .sidebar-toggle-button,
+.sidebar-toggle-button.mod-left,
+div.sidebar-toggle-button.mod-left,
+.workspace-ribbon.mod-left .sidebar-toggle-button {
+    position: relative; /* Ensure offsets work */
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--background-primary) !important;
+    border: 1px solid var(--divider-color) !important;
+    box-shadow: var(--shadow-premium) !important;
+    width: 28px !important;
+    height: 28px !important;
+    margin: 4px !important;
+    padding-left: 8px !important;
+    padding-bottom: 9px !important;
+    transition: var(--tr-smooth) !important;
+}
+
+.sidebar-toggle-button.mod-right:hover,
+div.sidebar-toggle-button.mod-right:hover,
+.sidebar-toggle-button.mod-left:hover,
+div.sidebar-toggle-button.mod-left:hover {
+    background-color: var(--background-primary) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.sidebar-toggle-button.mod-right svg,
+.sidebar-toggle-button.mod-right .clickable-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 1px !important; /* Specific spacing for right toggle */
+    transition: color var(--tr-smooth);
+}
+
+.sidebar-toggle-button.mod-left svg,
+.sidebar-toggle-button.mod-left .clickable-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 9px !important; /* Specific spacing for left toggle */
+    transition: color var(--tr-smooth);
+}
+
+.sidebar-toggle-button.mod-right:hover svg,
+.sidebar-toggle-button.mod-left:hover svg {
+    color: var(--interactive-accent) !important;
+}
+
+/* Dark Mode Hover Override for Sidebar Triggers (both collapsed and expanded) */
+.theme-dark {
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right:hover svg,
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left:hover svg,
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon:hover svg,
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon:hover svg,
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right:hover svg,
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left:hover svg,
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon:hover svg,
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon:hover svg,
+    .sidebar-toggle-button.mod-right:hover svg,
+    .sidebar-toggle-button.mod-left:hover svg,
+    .sidebar-toggle-button.mod-right:hover .clickable-icon svg,
+    .sidebar-toggle-button.mod-left:hover .clickable-icon svg,
+    .workspace-ribbon.mod-right .sidebar-toggle-button.clickable-icon:hover svg,
+    .workspace-ribbon.mod-left .sidebar-toggle-button.clickable-icon:hover svg,
+    body .sidebar-toggle-button.mod-right.clickable-icon:hover svg,
+    body .sidebar-toggle-button.mod-left.clickable-icon:hover svg {
+        color: #b39ddb !important; /* Light indigo highlight on hover */
+    }
+}
+
+/* Add pointer cursor to the exact paths for all states */
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon {
+    cursor: pointer !important;
+}
+
+/* Force-neutralize the specific hover variable behavior with extreme specificity */
+body .sidebar-toggle-button.mod-right.clickable-icon:hover,
+body div.sidebar-toggle-button.mod-right.clickable-icon:hover,
+.workspace-ribbon.mod-right .sidebar-toggle-button.clickable-icon:hover,
+body .sidebar-toggle-button.mod-left.clickable-icon:hover,
+body div.sidebar-toggle-button.mod-left.clickable-icon:hover,
+.workspace-ribbon.mod-left .sidebar-toggle-button.clickable-icon:hover {
+    background-color: transparent !important;
+}
+
+/* Explicitly counter the media query that stubbornly adds the hover background */
+@media (hover: hover) {
+    /* Right Trigger (Closed State) */
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon:hover,
+    /* Left Trigger (Closed State) */
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon:hover,
+    
+    /* Right Trigger (Expanded State) - Using provided absolute path */
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon:hover,
+    
+    /* Left Trigger (Expanded State) - Using provided absolute path */
+    body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon:hover,
+
+    /* Fallbacks */
+    .workspace-ribbon.mod-right .sidebar-toggle-button.clickable-icon:hover,
+    .workspace-ribbon.mod-left .sidebar-toggle-button.clickable-icon:hover,
+    body .sidebar-toggle-button.mod-right.clickable-icon:hover,
+    body .sidebar-toggle-button.mod-left.clickable-icon:hover {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+}
+
+/* New Tab Button Styling */
+.workspace-tab-header-new-tab {
+    margin-top: 1px !important;
+}
+
+/* --- macOS Titlebar & Window Control Containers --- */
+.titlebar,
+.titlebar-button-container,
+.titlebar-container,
+.titlebar-left {
+    background-color: var(--background-secondary) !important;
+}
+
+body {
+    --titlebar-background: var(--background-secondary) !important;
+    --titlebar-background-focused: var(--background-secondary) !important;
+}
+
+.workspace-tab-header-container-inner {
+    margin-bottom: 2px !important;
+    overflow: visible !important;
+}
+
+.mod-root .workspace-tab-header-container-inner {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    margin-top: 0 !important;
+    padding-top: 6px !important;
+
+    
+    &::-webkit-scrollbar {
+        display: none !important;
+    }
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-status-icon:hover, .workspace-tab-header.is-active .workspace-tab-header-inner-close-button:hover {
+    border-radius: 8px !important;
+}
+
+/* Embedded Backlinks / Linked Mentions Icon Margin */
+.embedded-backlinks .tree-item-icon.collapse-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-container > div.workspace-leaf.mod-active > div > div.view-content > div.markdown-source-view.cm-s-obsidian.mod-cm6.node-insert-event.is-readable-line-width.is-live-preview.is-folding.show-properties > div > div.cm-scroller > div.cm-sizer > div.embedded-backlinks > div.backlink-pane.node-insert-event > div:nth-child(2) > div > div:nth-child(2) > div.tree-item-self.search-result-file-title.is-clickable > div.tree-item-icon.collapse-icon {
+    margin-top: 6px !important;
+}
+
+
+/* --- Sidebar File Tree Styling --- */
+.nav-file-title,
+.nav-folder-title,
+.tree-item-self {
+    transition: background-color 0.15s ease, color 0.15s ease !important;
+
+    &:hover {
+        background-color: var(--sidebar-hover-bg) !important;
+        color: white !important;
+        --icon-color: white !important;
+        --nav-collapse-icon-color: white !important;
+        
+        svg {
+            color: white !important;
+            stroke: currentColor !important;
+        }
+    }
+
+    &.is-active {
+        background-color: var(--interactive-accent) !important;
+        color: white !important;
+        --icon-color: white !important;
+        --nav-collapse-icon-color: white !important;
+        
+        // Prevent default borders or outlines from increasing the size of active items
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        
+        svg {
+            color: white !important;
+            stroke: currentColor !important;
+        }
+        
+        &:hover {
+            background-color: var(--sidebar-hover-bg) !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            
+            svg {
+                color: white !important;
+                stroke: currentColor !important;
+            }
+        }
+    }
+}
+
+// Extra specificity fallback for dark mode to ensure active changes apply
+.theme-dark {
+    .nav-file-title.is-active,
+    .nav-folder-title.is-active,
+    .tree-item-self.is-active {
+        background-color: var(--interactive-accent) !important;
+        color: white !important;
+        --icon-color: white !important;
+        --nav-collapse-icon-color: white !important;
+        
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        
+        svg {
+            color: white !important;
+            stroke: currentColor !important;
+        }
+        
+        &:hover {
+            background-color: var(--sidebar-hover-bg) !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            
+            svg {
+                color: white !important;
+                stroke: currentColor !important;
+            }
+        }
+    }
+}
+
+body>div.app-container>div.horizontal-main-container>div>div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split>div.workspace-tabs.mod-top.mod-top-left-space>div.workspace-tab-container>div:nth-child(1)>div>div.nav-files-container.node-insert-event>div>div:nth-child(16)>div {
+    padding-bottom: 5px !important;
+    padding-top: 2px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.tree-item-self nav-file-title tappable is-clickable is-active has-focus {
+    padding-bottom: 5px !important;
+}

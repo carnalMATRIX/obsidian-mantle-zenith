@@ -1,0 +1,34 @@
+@use "variables" as *;
+
+/* Inline Code */
+code, .cm-inline-code {
+    background-color: var(--container-bg);
+    color: var(--interactive-accent);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+}
+
+/* Code Blocks */
+pre, .cm-codeblock {
+    background-color: var(--code-bg) !important;
+    color: var(--code-normal) !important;
+    border: none !important;
+    padding: 1.25rem;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    margin: 1.5rem 0.5rem;
+}
+
+/* Syntax Highlighting - Prism (Reading Mode) & CodeMirror (Live Preview) */
+.token.comment, .cm-comment { color: var(--code-comment) !important; }
+.token.keyword, .cm-keyword { color: var(--code-keyword) !important; }
+.token.string, .cm-string { color: var(--code-string) !important; }
+.token.function, .cm-function { color: var(--code-function) !important; }
+.token.variable, .cm-variable { color: var(--code-variable) !important; }
+.token.operator, .cm-operator { color: var(--code-operator) !important; }
+.token.number, .cm-number { color: var(--code-keyword) !important; } /* Use keyword color for numbers in simplified ayu */
+.token.property, .cm-property { color: var(--code-function) !important; }
+.token.attr-name, .cm-attribute { color: var(--code-keyword) !important; }

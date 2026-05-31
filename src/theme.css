@@ -1,0 +1,1486 @@
+/* --- Vollkorn Regular Weights --- */
+@font-face {
+  font-family: "Vollkorn";
+  src: url("./fonts/Vollkorn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vollkorn";
+  src: url("./fonts/Vollkorn-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+/* --- Vollkorn Bold (700) --- */
+@font-face {
+  font-family: "Vollkorn";
+  src: url("./fonts/Vollkorn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vollkorn";
+  src: url("./fonts/Vollkorn-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+/* --- Google Sans --- */
+@font-face {
+  font-family: "Google Sans";
+  src: url("./fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Google Sans";
+  src: url("./fonts/GoogleSans-Italic-VariableFont_GRAD,opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+/* --- Typography Tokens --- */
+/* --- Mode Palettes --- */
+/* --- Heading Tokens (Spectrum Logic) --- */
+/* --- Element Tokens --- */
+/* --- Transitions & Animations --- */
+/* --- Shadow Tokens --- */
+/* --- List & Task Tokens --- */
+/* Headings: Reading Mode */
+.markdown-rendered h1, .markdown-rendered div.h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--h1-color);
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  font-family: var(--header-font) !important;
+  font-size: 2.5rem !important;
+  position: relative;
+  padding-left: 2.2rem;
+  margin-left: -1.7rem;
+  margin-top: 3.5em;
+  margin-bottom: 1.5em;
+  display: block;
+  text-indent: 1.3rem;
+  background: linear-gradient(135deg, var(--h1-color) 40%, var(--h2-color) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--h1-color);
+  background-image: linear-gradient(90deg, var(--h6-bg) 0%, transparent 100%);
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  border-radius: 4px;
+}
+.markdown-rendered h1::before, .markdown-rendered div.h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, var(--interactive-accent), var(--h2-color));
+  box-shadow: 0 1px 6px rgba(171, 44, 85, 0.15);
+}
+.markdown-rendered h2 {
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--h2-color);
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  font-family: var(--header-font) !important;
+  font-size: 1.65rem !important;
+  text-transform: uppercase;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 3em;
+  margin-bottom: 1.3em;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.markdown-rendered h2::before {
+  content: "//";
+  position: absolute;
+  right: 17px;
+  bottom: 0;
+  color: var(--interactive-accent);
+  opacity: 0.8;
+  font-family: var(--header-font) !important;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1;
+  font-style: normal;
+}
+.markdown-rendered h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--interactive-accent) 0%, var(--h2-color) 40%, transparent 100%);
+  margin-top: 0.5em; /* Space between text and line */
+}
+.markdown-rendered h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--h3-color);
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  font-family: var(--header-font) !important;
+  font-size: 1.35rem !important;
+  text-transform: uppercase;
+  margin-top: 2.5em;
+  margin-bottom: 1.1em;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.markdown-rendered h3::before {
+  content: "//";
+  position: absolute;
+  right: 17px;
+  bottom: -2px;
+  color: var(--h3-color);
+  opacity: 0.8;
+  font-family: var(--header-font) !important;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1;
+  font-style: normal;
+}
+.markdown-rendered h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--h3-color) 0%, var(--h4-color) 40%, transparent 100%);
+  margin-top: 0.5em;
+}
+.markdown-rendered h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--h4-color);
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  font-family: var(--header-font) !important;
+  font-size: 1.15rem !important;
+  text-transform: uppercase;
+  margin-top: 2.2em;
+  margin-bottom: 1em;
+  border-bottom: 1px dashed var(--divider-color);
+  padding-bottom: 0.3em;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.markdown-rendered h4::before {
+  content: "//";
+  position: absolute;
+  right: 17px;
+  bottom: -3px;
+  color: var(--h4-color);
+  opacity: 0.8;
+  font-family: var(--header-font) !important;
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1;
+  font-style: normal;
+}
+.markdown-rendered h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--h5-color);
+  letter-spacing: 0.09em;
+  line-height: 1.45;
+  font-family: var(--header-font) !important;
+  font-size: 1rem !important;
+  text-transform: uppercase;
+  margin-top: 2em;
+  margin-bottom: 0.9em;
+  border-bottom: 1px dotted var(--h5-underline);
+  padding-bottom: 0.3em;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.markdown-rendered h5::before {
+  content: "//";
+  position: absolute;
+  right: 17px;
+  bottom: -4px;
+  color: var(--h5-color);
+  opacity: 0.8;
+  font-family: var(--header-font) !important;
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.markdown-rendered h6 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--h6-color);
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  font-family: var(--header-font) !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+  display: inline-block;
+  background-color: var(--h6-bg);
+  border: 1px solid var(--h6-border);
+  border-radius: var(--border-radius-button);
+  padding: 0.15rem 0.75rem;
+  transition: var(--tr-smooth);
+}
+.markdown-rendered h6:hover {
+  background-color: var(--h6-border);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Headings: Live Preview */
+.inline-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--h1-color);
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  font-family: var(--header-font) !important;
+  font-size: 2.5rem !important;
+  font-family: var(--header-font) !important;
+  margin-bottom: 0 !important;
+}
+
+/* 1. Block/Container Styling (Live Preview) */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
+  font-family: var(--header-font) !important;
+  position: relative;
+  padding-left: 1.5rem;
+  padding: 0.2em 0;
+  padding-left: 0.5em;
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+  background-image: linear-gradient(90deg, var(--h6-bg) 0%, transparent 100%);
+  border-radius: 4px;
+  text-transform: uppercase !important;
+  font-size: 1.8rem !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 .cm-header-1 {
+  font-family: var(--header-font) !important;
+  font-size: 1.8rem !important;
+  background: linear-gradient(135deg, var(--h1-color) 40%, var(--h2-color) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--h1-color);
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -0.45px;
+  bottom: -0.05px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, var(--interactive-accent), var(--h2-color));
+  box-shadow: 0 1px 6px rgba(171, 44, 85, 0.15);
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2 {
+  font-family: var(--header-font) !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  font-size: 1.65rem !important;
+  text-transform: uppercase !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2 .cm-header-2 {
+  font-family: var(--header-font) !important;
+  font-size: 1.65rem !important;
+  text-transform: uppercase !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2::before {
+  content: "//";
+  position: absolute;
+  right: 17px;
+  bottom: 11px !important; /* Adjusted for 14px padding */
+  color: var(--interactive-accent);
+  opacity: 0.8;
+  font-family: var(--header-font) !important;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2::after {
+  content: "";
+  position: absolute;
+  bottom: 14px; /* Aligned with bottom padding start */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--interactive-accent) 0%, var(--h2-color) 40%, transparent 100%);
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-3 {
+  font-family: var(--header-font) !important;
+  padding-top: 12px !important;
+  padding-bottom: 11px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  font-size: 1.35rem !important;
+  text-transform: uppercase !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-3 .cm-header-3 {
+  font-family: var(--header-font) !important;
+  font-size: 1.35rem !important;
+  text-transform: uppercase !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-3::before {
+  content: "//";
+  position: absolute;
+  right: 17px;
+  bottom: 8px !important; /* Adjusted for 11px padding */
+  color: var(--h3-color);
+  opacity: 0.8;
+  font-family: var(--header-font) !important;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-3::after {
+  content: "";
+  position: absolute;
+  bottom: 11px; /* Aligned with bottom padding start */
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--h3-color) 0%, var(--h4-color) 40%, transparent 100%);
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-4 {
+  font-family: var(--header-font) !important;
+  padding-top: 12px !important;
+  padding-bottom: 6px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  font-size: 17.5px !important;
+  text-transform: uppercase !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-4 .cm-header-4 {
+  font-family: var(--header-font) !important;
+  font-size: 17.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.09em !important;
+  line-height: 1.45 !important;
+  color: var(--h4-color) !important;
+  text-transform: uppercase !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-4::before {
+  content: "//";
+  position: absolute;
+  right: 17px;
+  bottom: 2px !important; /* Adjusted for 6px padding */
+  color: var(--h4-color);
+  opacity: 0.8;
+  font-family: var(--header-font) !important;
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-4::after {
+  content: "";
+  position: absolute;
+  bottom: 6px; /* Aligned with bottom padding start */
+  left: 0;
+  right: 0;
+  border-bottom: 1px dotted var(--h4-underline);
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-5 {
+  font-family: var(--header-font) !important;
+  padding-top: 12px !important;
+  padding-bottom: 9px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-5 .cm-header-5 {
+  font-family: var(--header-font) !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-5::before {
+  content: "//";
+  position: absolute;
+  right: 17px;
+  bottom: 5px !important; /* Adjusted for 9px padding */
+  color: var(--h5-color);
+  opacity: 0.8;
+  font-family: var(--header-font) !important;
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-5::after {
+  content: "";
+  position: absolute;
+  bottom: 9px; /* Aligned with bottom padding start */
+  left: 0;
+  right: 0;
+  border-bottom: 1px dotted var(--h5-underline);
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-6 {
+  display: block;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  padding-top: 16px !important;
+  padding-bottom: 2px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  transition: none !important;
+  font-size: 16px !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-6 .cm-header-6 {
+  font-family: var(--header-font) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  color: var(--h6-color) !important;
+  text-transform: none !important;
+  line-height: 1.2 !important;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-6:hover {
+  background-color: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Paragraphs & Text */
+.markdown-rendered p {
+  margin-bottom: 1.2em;
+}
+
+.markdown-rendered p,
+.cm-line {
+  font-family: var(--font-text) !important;
+  font-size: 15px !important;
+  line-height: 1.6;
+  color: var(--text-normal);
+  margin: 0 !important; /* Explicitly zero out margins to prevent CodeMirror 6 mapping issues */
+  /* Forces numbers to align uniformly on the baseline */
+  font-variant-numeric: lining-nums;
+}
+
+/* Bold & Italic */
+strong, b, .cm-strong {
+  font-weight: 700;
+  color: #b39ddb !important;
+}
+
+em, i, .cm-em {
+  font-style: italic;
+}
+
+/* Highlight */
+mark,
+.cm-highlight,
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: var(--highlight-bg) !important;
+  color: var(--highlight-text) !important;
+  opacity: var(--highlight-opacity) !important;
+}
+
+/* Blockquotes */
+blockquote {
+  background-color: var(--container-bg);
+  border-left: 4px solid var(--interactive-accent);
+  padding: 1rem;
+  border-radius: 0; /* Optional: Softens the sunken box */
+  margin: 1rem 0;
+}
+
+/* Links */
+a,
+.internal-link,
+.external-link,
+.cm-link,
+.cm-hmd-internal-link {
+  color: var(--interactive-accent) !important;
+  text-decoration: none !important;
+}
+a:hover,
+.internal-link:hover,
+.external-link:hover,
+.cm-link:hover,
+.cm-hmd-internal-link:hover {
+  text-decoration: underline !important;
+  color: var(--interactive-accent) !important;
+}
+
+/* Internal Links */
+a.internal-link,
+.internal-link,
+.cm-hmd-internal-link,
+.markdown-rendered .internal-link,
+.markdown-preview-view .internal-link,
+.cm-s-obsidian .cm-hmd-internal-link,
+.cm-s-obsidian span.cm-hmd-internal-link,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link {
+  color: var(--interactive-accent) !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Internal Link Hover Styles */
+a.internal-link:hover,
+.internal-link:hover,
+.cm-hmd-internal-link:hover,
+.markdown-rendered .internal-link:hover,
+.markdown-preview-view .internal-link:hover,
+.cm-s-obsidian .cm-hmd-internal-link:hover,
+.cm-s-obsidian span.cm-hmd-internal-link:hover,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link:hover {
+  color: var(--interactive-accent) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--interactive-accent) !important;
+  -webkit-text-decoration-color: var(--interactive-accent) !important;
+  border-bottom: none !important;
+}
+
+div.workspace-tab-header-inner-title, div.status-bar {
+  font-family: var(--header-font) !important;
+}
+
+/* External Links */
+a.external-link,
+.external-link,
+.cm-link,
+.cm-link.external-link,
+.markdown-rendered .external-link,
+.markdown-preview-view .external-link,
+.cm-s-obsidian .cm-link,
+.cm-s-obsidian span.cm-link,
+.markdown-source-view.mod-cm6 .cm-link {
+  background-image: none !important;
+  padding-right: 0 !important;
+  color: var(--interactive-accent) !important;
+  text-decoration: none !important;
+  /* Hide native default elements, let ::after be overridden for our custom icon */
+}
+a.external-link::before,
+.external-link::before,
+.cm-link::before,
+.cm-link.external-link::before,
+.markdown-rendered .external-link::before,
+.markdown-preview-view .external-link::before,
+.cm-s-obsidian .cm-link::before,
+.cm-s-obsidian span.cm-link::before,
+.markdown-source-view.mod-cm6 .cm-link::before {
+  display: none !important;
+  content: none !important;
+}
+a.external-link::after,
+.external-link::after,
+.cm-link::after,
+.cm-link.external-link::after,
+.markdown-rendered .external-link::after,
+.markdown-preview-view .external-link::after,
+.cm-s-obsidian .cm-link::after,
+.cm-s-obsidian span.cm-link::after,
+.markdown-source-view.mod-cm6 .cm-link::after {
+  background-image: none !important;
+}
+
+/* Suppress icons on formatting, string, and URL elements to prevent double icons */
+.cm-formatting::after,
+.cm-string::after,
+.cm-url::after,
+.cm-formatting-link-string::after,
+span.external-link::after,
+span.external-link::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Custom External Link Icon Injection */
+a.external-link::after,
+.cm-link:not(.cm-formatting):not(.cm-string):not(.cm-url)::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 12px !important;
+  height: 12px !important;
+  padding-bottom: 3px !important;
+  margin-left: 4px;
+  vertical-align: middle;
+  background-color: var(--interactive-accent) !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpath d='m21 3-9 9'%3E%3C/path%3E%3Cpath d='M15 3h6v6'%3E%3C/path%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpath d='m21 3-9 9'%3E%3C/path%3E%3Cpath d='M15 3h6v6'%3E%3C/path%3E%3C/svg%3E") !important;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+/* External Link Hover Styles */
+a.external-link:hover,
+.external-link:hover,
+.cm-link:hover,
+.cm-link.external-link:hover,
+.markdown-rendered .external-link:hover,
+.markdown-preview-view .external-link:hover,
+.cm-s-obsidian .cm-link:hover,
+.cm-s-obsidian span.cm-link:hover,
+.markdown-source-view.mod-cm6 .cm-link:hover {
+  color: var(--interactive-accent) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--interactive-accent) !important;
+  -webkit-text-decoration-color: var(--interactive-accent) !important;
+}
+a.external-link:hover::after,
+.external-link:hover::after,
+.cm-link:hover::after,
+.cm-link.external-link:hover::after,
+.markdown-rendered .external-link:hover::after,
+.markdown-preview-view .external-link:hover::after,
+.cm-s-obsidian .cm-link:hover::after,
+.cm-s-obsidian span.cm-link:hover::after,
+.markdown-source-view.mod-cm6 .cm-link:hover::after {
+  background-color: var(--interactive-accent) !important;
+}
+
+/* CodeMirror Underlines */
+.cm-underline,
+.cm-s-obsidian .cm-underline,
+span.cm-underline,
+.markdown-source-view.mod-cm6 .cm-underline {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.cm-underline:hover,
+.cm-s-obsidian .cm-underline:hover,
+span.cm-underline:hover,
+.markdown-source-view.mod-cm6 .cm-underline:hover {
+  text-decoration: underline !important;
+  text-decoration-color: var(--interactive-accent) !important;
+  -webkit-text-decoration-color: var(--interactive-accent) !important;
+  border-bottom: none !important;
+}
+
+/* HR */
+hr {
+  border: 0;
+  border-top: 1px solid var(--divider-color);
+  margin: 2.5rem 0;
+}
+
+/* Lists */
+ul, ol {
+  padding-inline-start: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+li {
+  margin-bottom: 0.15rem;
+}
+
+/* Tasks */
+.task-list-item {
+  list-style-type: none;
+}
+
+.task-list-item-checkbox {
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 0.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Task Status Styling */
+.is-checked {
+  color: #8b857f;
+  text-decoration: line-through;
+}
+
+/* Custom Task Markers (Optional, requires specific Obsidian settings or plugins) */
+/* Example for [!] important: .task-list-item[data-task="!"] */
+/* Inline Code */
+code, .cm-inline-code {
+  background-color: var(--container-bg);
+  color: var(--interactive-accent);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+/* Code Blocks */
+pre, .cm-codeblock {
+  background-color: var(--code-bg) !important;
+  color: var(--code-normal) !important;
+  border: none !important;
+  padding: 1.25rem;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  margin: 1.5rem 0.5rem;
+}
+
+/* Syntax Highlighting - Prism (Reading Mode) & CodeMirror (Live Preview) */
+.token.comment, .cm-comment {
+  color: var(--code-comment) !important;
+}
+
+.token.keyword, .cm-keyword {
+  color: var(--code-keyword) !important;
+}
+
+.token.string, .cm-string {
+  color: var(--code-string) !important;
+}
+
+.token.function, .cm-function {
+  color: var(--code-function) !important;
+}
+
+.token.variable, .cm-variable {
+  color: var(--code-variable) !important;
+}
+
+.token.operator, .cm-operator {
+  color: var(--code-operator) !important;
+}
+
+.token.number, .cm-number {
+  color: var(--code-keyword) !important;
+} /* Use keyword color for numbers in simplified ayu */
+.token.property, .cm-property {
+  color: var(--code-function) !important;
+}
+
+.token.attr-name, .cm-attribute {
+  color: var(--code-keyword) !important;
+}
+
+.callout {
+  background-color: var(--container-bg) !important;
+  border: 1px solid var(--background-modifier-border);
+  /* The callout icon and title will still retain their specific colors (e.g., blue for info, red for error) */
+}
+
+.callout-title {
+  font-family: var(--header-font);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.callout-content {
+  margin-top: 0.5rem;
+}
+
+.workspace-tab-header-inner {
+  padding-bottom: 4px !important;
+  padding-top: 4px !important;
+}
+
+.workspace-tab-header-inner-title {
+  padding-top: 1px !important;
+}
+
+/* --- Graph View Styling --- */
+body {
+  --graph-node: #525c68;
+  --graph-line: #8c5c32;
+  --graph-node-focused: #37538c;
+}
+
+/* Sidebars */
+.workspace-split.mod-right-split {
+  background-color: var(--background-secondary);
+}
+
+/* --- Cosmic Wave Active State --- */
+@keyframes cosmic-wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+}
+/* Status Bar */
+.status-bar {
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--divider-color);
+  font-size: 0.85em;
+}
+
+/* Modals & Prompts */
+.modal, .prompt {
+  border-radius: var(--border-radius-modal);
+  box-shadow: var(--shadow-premium);
+  border: 1px solid var(--divider-color);
+  background-color: var(--background-primary);
+  backdrop-filter: blur(16px);
+  transition: var(--tr-smooth);
+}
+@supports (backdrop-filter: blur(16px)) {
+  .modal, .prompt {
+    background-color: var(--container-bg);
+    opacity: 0.98;
+  }
+}
+
+.modal-title,
+.modal h2,
+.modal-content h2 {
+  font-family: "Google Sans", var(--font-interface) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--divider-color);
+  border-radius: 10px;
+  -webkit-transition: var(--tr-smooth);
+  transition: var(--tr-smooth);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}
+
+/* Interactive Element Transitions */
+button {
+  transition: var(--tr-quick);
+  border-radius: var(--border-radius-button) !important;
+}
+button:hover {
+  transform: translateY(-0.5px);
+  filter: brightness(1.05);
+}
+button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* --- Workspace Tab Headers (Floating Capsule Redesign) --- */
+.workspace-tab-header-container {
+  background-color: transparent !important;
+  border-bottom: none !important; /* Removed global border */
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+/* Apply bottom border ONLY to sidebars */
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+  border-bottom: 1px solid var(--divider-color) !important;
+}
+
+.mod-left-split .workspace-tab-header-container {
+  margin-top: 2px !important;
+}
+
+.mod-root .workspace-tab-header,
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header {
+  background-color: var(--background-primary) !important;
+  border: 1px solid var(--divider-color) !important;
+  border-radius: 10px !important;
+  margin: 0 4px !important;
+  margin-top: 3px !important;
+  margin-bottom: 4px !important;
+  height: 26px !important;
+  align-self: center !important;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 2px !important;
+  cursor: pointer !important; /* Added cursor pointer for all tabs */
+  /* Default shadow (Subtle light mode pink glow on top and sides) */
+  box-shadow: 0 -3px 8px -1px rgba(216, 27, 96, 0.12) !important;
+}
+.mod-root .workspace-tab-header .workspace-tab-header-inner,
+.mod-left-split .workspace-tab-header .workspace-tab-header-inner,
+.mod-right-split .workspace-tab-header .workspace-tab-header-inner {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 100% !important;
+  padding: 0 5px !important;
+  padding-left: 6px !important;
+  padding-right: 1px !important;
+  cursor: pointer !important; /* Ensure inner element also has pointer */
+}
+.mod-root .workspace-tab-header,
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header {
+  /* Disable native curves */
+}
+.mod-root .workspace-tab-header .workspace-tab-header-inner::before,
+.mod-root .workspace-tab-header .workspace-tab-header-inner::after,
+.mod-left-split .workspace-tab-header .workspace-tab-header-inner::before,
+.mod-left-split .workspace-tab-header .workspace-tab-header-inner::after,
+.mod-right-split .workspace-tab-header .workspace-tab-header-inner::before,
+.mod-right-split .workspace-tab-header .workspace-tab-header-inner::after {
+  display: none !important;
+  content: none !important;
+}
+.mod-root .workspace-tab-header:hover,
+.mod-left-split .workspace-tab-header:hover,
+.mod-right-split .workspace-tab-header:hover {
+  transform: translateY(-1px);
+  background-color: var(--background-modifier-hover) !important;
+}
+.mod-root .workspace-tab-header.is-active,
+.mod-left-split .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header.is-active {
+  border-color: var(--interactive-accent) !important;
+  background-color: transparent !important;
+  color: var(--interactive-accent) !important;
+  box-shadow: 0 -4px 12px -1px rgba(216, 27, 96, 0.4) !important; /* Pink glow on top and sides */
+}
+.mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--interactive-accent) !important;
+}
+.mod-root .workspace-tab-header.is-active::before,
+.mod-left-split .workspace-tab-header.is-active::before,
+.mod-right-split .workspace-tab-header.is-active::before {
+  display: none !important;
+}
+
+/* Force active styling for Right Sidebar specifically using the provided path */
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active {
+  border: 1px solid var(--interactive-accent) !important;
+  border-radius: 10px !important; /* Added border-radius */
+  border-color: var(--interactive-accent) !important;
+  background-color: transparent !important;
+  color: var(--interactive-accent) !important;
+  box-shadow: 0 -4px 12px -1px rgba(216, 27, 96, 0.4) !important; /* Pink glow on top and sides */
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--interactive-accent) !important;
+}
+
+/* --- INDEPENDENT TAB ACCENT STYLING --- */
+/* 1. Main Page Tabs (Middle Section) */
+.workspace-split.mod-root .workspace-tab-header.is-active::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  background-color: var(--background-primary) !important;
+  box-shadow: 0 0 0 20px var(--background-primary) !important;
+  width: 84px !important;
+  right: -10% !important;
+  transform: translateY(5px) !important;
+  z-index: -1 !important;
+  pointer-events: none !important; /* Prevent overlap issues */
+}
+
+/* 2. Sidebar Menu Tabs (Files / Search / etc.) */
+.mod-left-split .workspace-tab-header.is-active::after,
+.mod-right-split .workspace-tab-header.is-active::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  background-color: var(--background-secondary) !important;
+  box-shadow: 0 0 0 20px var(--background-secondary) !important;
+  width: 4px !important;
+  right: 23% !important;
+  transform: translateY(5px) !important;
+  z-index: 5 !important;
+  pointer-events: none !important; /* Prevent overlap issues */
+}
+
+/* --- Sidebar specific header inner padding adjustments --- */
+/* Dark Mode Tab Shadow Adjustments */
+.theme-dark .mod-root .workspace-tab-header,
+.theme-dark .mod-left-split .workspace-tab-header,
+.theme-dark .mod-right-split .workspace-tab-header {
+  box-shadow: 0 -3px 8px -1px rgba(126, 87, 194, 0.15) !important; /* Subtle indigo glow on top and sides */
+}
+
+/* Add indigo glow to active tabs in dark mode */
+.theme-dark .workspace-tab-header.is-active {
+  box-shadow: 0 -4px 12px -1px rgba(126, 87, 194, 0.45) !important; /* Indigo glow on top and sides */
+}
+
+/* Dark Mode Tab Color Adjustments (Indigo instead of Pink) and glow shadow */
+.theme-dark .workspace-tab-header.is-active,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active {
+  border-color: #7e57c2 !important; /* Indigo accent */
+  color: #b39ddb !important; /* Light indigo text */
+  box-shadow: 0 -4px 12px -1px rgba(126, 87, 194, 0.45) !important; /* Indigo glow on top and sides */
+}
+
+.theme-dark .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-dark .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: #b39ddb !important;
+}
+
+/* Sidebar specific header adjustments */
+.mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header-container-inner {
+  padding: 1px 0 7px !important;
+  margin: 6px 0 0 0 !important;
+  margin-bottom: -2px !important;
+  gap: 3px !important;
+  overflow: visible !important;
+}
+
+/* Sidebar specific header inner padding adjustments */
+.mod-left-split .workspace-tab-header .workspace-tab-header-inner {
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+}
+
+/* Right Sidebar specific header adjustments */
+.mod-right-split .workspace-tab-header {
+  margin: 0 1px !important;
+  margin-top: 3px !important;
+  margin-bottom: 4px !important;
+}
+
+.mod-right-split .workspace-tab-header .workspace-tab-header-inner {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+/* --- Sidebar Toggle Buttons (Floating Style) --- */
+.sidebar-toggle-button.mod-right,
+div.sidebar-toggle-button.mod-right,
+.workspace-ribbon.mod-right .sidebar-toggle-button {
+  top: 1px !important;
+  right: 2px !important;
+}
+
+.sidebar-toggle-button.mod-right,
+div.sidebar-toggle-button.mod-right,
+.workspace-ribbon.mod-right .sidebar-toggle-button,
+.sidebar-toggle-button.mod-left,
+div.sidebar-toggle-button.mod-left,
+.workspace-ribbon.mod-left .sidebar-toggle-button {
+  position: relative; /* Ensure offsets work */
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: var(--background-primary) !important;
+  border: 1px solid var(--divider-color) !important;
+  box-shadow: var(--shadow-premium) !important;
+  width: 28px !important;
+  height: 28px !important;
+  margin: 4px !important;
+  padding-left: 8px !important;
+  padding-bottom: 9px !important;
+  transition: var(--tr-smooth) !important;
+}
+
+.sidebar-toggle-button.mod-right:hover,
+div.sidebar-toggle-button.mod-right:hover,
+.sidebar-toggle-button.mod-left:hover,
+div.sidebar-toggle-button.mod-left:hover {
+  background-color: var(--background-primary) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.sidebar-toggle-button.mod-right svg,
+.sidebar-toggle-button.mod-right .clickable-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 1px !important; /* Specific spacing for right toggle */
+  transition: color var(--tr-smooth);
+}
+
+.sidebar-toggle-button.mod-left svg,
+.sidebar-toggle-button.mod-left .clickable-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 9px !important; /* Specific spacing for left toggle */
+  transition: color var(--tr-smooth);
+}
+
+.sidebar-toggle-button.mod-right:hover svg,
+.sidebar-toggle-button.mod-left:hover svg {
+  color: var(--interactive-accent) !important;
+}
+
+/* Dark Mode Hover Override for Sidebar Triggers (both collapsed and expanded) */
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right:hover svg,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left:hover svg,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon:hover svg,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon:hover svg,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right:hover svg,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left:hover svg,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon:hover svg,
+.theme-dark body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon:hover svg,
+.theme-dark .sidebar-toggle-button.mod-right:hover svg,
+.theme-dark .sidebar-toggle-button.mod-left:hover svg,
+.theme-dark .sidebar-toggle-button.mod-right:hover .clickable-icon svg,
+.theme-dark .sidebar-toggle-button.mod-left:hover .clickable-icon svg,
+.theme-dark .workspace-ribbon.mod-right .sidebar-toggle-button.clickable-icon:hover svg,
+.theme-dark .workspace-ribbon.mod-left .sidebar-toggle-button.clickable-icon:hover svg,
+.theme-dark body .sidebar-toggle-button.mod-right.clickable-icon:hover svg,
+.theme-dark body .sidebar-toggle-button.mod-left.clickable-icon:hover svg {
+  color: #b39ddb !important; /* Light indigo highlight on hover */
+}
+
+/* Add pointer cursor to the exact paths for all states */
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon {
+  cursor: pointer !important;
+}
+
+/* Force-neutralize the specific hover variable behavior with extreme specificity */
+body .sidebar-toggle-button.mod-right.clickable-icon:hover,
+body div.sidebar-toggle-button.mod-right.clickable-icon:hover,
+.workspace-ribbon.mod-right .sidebar-toggle-button.clickable-icon:hover,
+body .sidebar-toggle-button.mod-left.clickable-icon:hover,
+body div.sidebar-toggle-button.mod-left.clickable-icon:hover,
+.workspace-ribbon.mod-left .sidebar-toggle-button.clickable-icon:hover {
+  background-color: transparent !important;
+}
+
+/* Explicitly counter the media query that stubbornly adds the hover background */
+@media (hover: hover) {
+  /* Right Trigger (Closed State) */
+  body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon:hover,
+  body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon:hover,
+  body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div.clickable-icon:hover,
+  body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div.clickable-icon:hover,
+  .workspace-ribbon.mod-right .sidebar-toggle-button.clickable-icon:hover,
+  .workspace-ribbon.mod-left .sidebar-toggle-button.clickable-icon:hover,
+  body .sidebar-toggle-button.mod-right.clickable-icon:hover,
+  body .sidebar-toggle-button.mod-left.clickable-icon:hover {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
+/* New Tab Button Styling */
+.workspace-tab-header-new-tab {
+  margin-top: 1px !important;
+}
+
+/* --- macOS Titlebar & Window Control Containers --- */
+.titlebar,
+.titlebar-button-container,
+.titlebar-container,
+.titlebar-left {
+  background-color: var(--background-secondary) !important;
+}
+
+body {
+  --titlebar-background: var(--background-secondary) !important;
+  --titlebar-background-focused: var(--background-secondary) !important;
+}
+
+.workspace-tab-header-container-inner {
+  margin-bottom: 2px !important;
+  overflow: visible !important;
+}
+
+.mod-root .workspace-tab-header-container-inner {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  margin-top: 0 !important;
+  padding-top: 6px !important;
+}
+.mod-root .workspace-tab-header-container-inner::-webkit-scrollbar {
+  display: none !important;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-status-icon:hover, .workspace-tab-header.is-active .workspace-tab-header-inner-close-button:hover {
+  border-radius: 8px !important;
+}
+
+/* Embedded Backlinks / Linked Mentions Icon Margin */
+.embedded-backlinks .tree-item-icon.collapse-icon,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-container > div.workspace-leaf.mod-active > div > div.view-content > div.markdown-source-view.cm-s-obsidian.mod-cm6.node-insert-event.is-readable-line-width.is-live-preview.is-folding.show-properties > div > div.cm-scroller > div.cm-sizer > div.embedded-backlinks > div.backlink-pane.node-insert-event > div:nth-child(2) > div > div:nth-child(2) > div.tree-item-self.search-result-file-title.is-clickable > div.tree-item-icon.collapse-icon {
+  margin-top: 6px !important;
+}
+
+/* --- Sidebar File Tree Styling --- */
+.nav-file-title,
+.nav-folder-title,
+.tree-item-self {
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+.nav-file-title:hover,
+.nav-folder-title:hover,
+.tree-item-self:hover {
+  background-color: var(--sidebar-hover-bg) !important;
+  color: white !important;
+  --icon-color: white !important;
+  --nav-collapse-icon-color: white !important;
+}
+.nav-file-title:hover svg,
+.nav-folder-title:hover svg,
+.tree-item-self:hover svg {
+  color: white !important;
+  stroke: currentColor !important;
+}
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
+.tree-item-self.is-active {
+  background-color: var(--interactive-accent) !important;
+  color: white !important;
+  --icon-color: white !important;
+  --nav-collapse-icon-color: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.nav-file-title.is-active svg,
+.nav-folder-title.is-active svg,
+.tree-item-self.is-active svg {
+  color: white !important;
+  stroke: currentColor !important;
+}
+.nav-file-title.is-active:hover,
+.nav-folder-title.is-active:hover,
+.tree-item-self.is-active:hover {
+  background-color: var(--sidebar-hover-bg) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.nav-file-title.is-active:hover svg,
+.nav-folder-title.is-active:hover svg,
+.tree-item-self.is-active:hover svg {
+  color: white !important;
+  stroke: currentColor !important;
+}
+
+.theme-dark .nav-file-title.is-active,
+.theme-dark .nav-folder-title.is-active,
+.theme-dark .tree-item-self.is-active {
+  background-color: var(--interactive-accent) !important;
+  color: white !important;
+  --icon-color: white !important;
+  --nav-collapse-icon-color: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.theme-dark .nav-file-title.is-active svg,
+.theme-dark .nav-folder-title.is-active svg,
+.theme-dark .tree-item-self.is-active svg {
+  color: white !important;
+  stroke: currentColor !important;
+}
+.theme-dark .nav-file-title.is-active:hover,
+.theme-dark .nav-folder-title.is-active:hover,
+.theme-dark .tree-item-self.is-active:hover {
+  background-color: var(--sidebar-hover-bg) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.theme-dark .nav-file-title.is-active:hover svg,
+.theme-dark .nav-folder-title.is-active:hover svg,
+.theme-dark .tree-item-self.is-active:hover svg {
+  color: white !important;
+  stroke: currentColor !important;
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div:nth-child(1) > div > div.nav-files-container.node-insert-event > div > div:nth-child(16) > div {
+  padding-bottom: 5px !important;
+  padding-top: 2px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.tree-item-self nav-file-title tappable is-clickable is-active has-focus {
+  padding-bottom: 5px !important;
+}
+
+/* Light Mode Variables */
+.theme-light {
+  --background-primary: #fdfbf7;
+  --background-secondary: #f8f5ee;
+  --background-modifier-border: #e8e2d5;
+  --divider-color: #e8e2d5;
+  --text-normal: #2f2f2f;
+  --text-muted: #6e645a;
+  --interactive-accent: #d81b60;
+  --link-color: var(--interactive-accent);
+  --link-color-hover: var(--interactive-accent);
+  --link-external-color: var(--interactive-accent);
+  --link-external-color-hover: var(--interactive-accent);
+  --link-external-decoration: none;
+  --link-external-decoration-hover: underline;
+  --h1-color: #2b2738;
+  --h2-color: #9b3053;
+  --h3-color: #2a6b61;
+  --h4-color: #37538c;
+  --h4-underline: rgba(55, 83, 140, 0.35);
+  --h5-color: #8c5c32;
+  --h5-underline: rgba(140, 92, 50, 0.35);
+  --h6-color: #0f172a;
+  --h6-bg: rgba(82, 92, 104, 0.07);
+  --h6-border: rgba(82, 92, 104, 0.18);
+  --highlight-bg: #37538c;
+  --highlight-text: #ffffff;
+  --highlight-opacity: 1;
+  --sidebar-hover-bg: #4f46e5;
+  --code-bg: #FAFAFA;
+  --code-normal: #5C6166;
+  --code-comment: #ABB0B6;
+  --code-keyword: #F29718;
+  --code-string: #86B300;
+  --code-function: #F29718;
+  --code-variable: #5C6166;
+  --code-operator: #ED9366;
+  /* Container Variables */
+  --container-bg: #f2efe6;
+  --code-background: var(--code-bg); /* Native Obsidian Code block var */
+  /* Custom Design Tokens */
+  --tr-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-quick: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-elastic: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --shadow-premium: 0 4px 16px -2px rgba(47, 47, 47, 0.05), 0 2px 6px -1px rgba(47, 47, 47, 0.03);
+  --glow-shadow: 0 0 12px rgba(216, 27, 96, 0.15);
+  --glow-color: rgba(216, 27, 96, 0.4);
+  --border-radius-card: 8px;
+  --border-radius-modal: 12px;
+  --border-radius-button: 6px;
+  --background-modifier-border-hover: rgba(0, 0, 0, 0.15);
+  --background-modifier-border-focus: rgba(216, 27, 96, 0.3);
+  --background-modifier-active-hover: #fcf4eb;
+  --light-bg-mod: #fcf4eb;
+}
+
+/* Dark Mode Variables */
+.theme-dark {
+  --background-primary: #0d1117;
+  --background-secondary: #161b22;
+  --background-modifier-border: #30363d;
+  --divider-color: #1c2c43;
+  --text-normal: #c9d1d9;
+  --text-muted: #8b949e;
+  --interactive-accent: #f06292;
+  --link-color: var(--interactive-accent);
+  --link-color-hover: var(--interactive-accent);
+  --link-external-color: var(--interactive-accent);
+  --link-external-color-hover: var(--interactive-accent);
+  --link-external-decoration: none;
+  --link-external-decoration-hover: underline;
+  --h1-color: #e9ecef;
+  --h2-color: #e8a7b8;
+  --h3-color: #a8d8b9;
+  --h4-color: #a5c4f2;
+  --h4-underline: rgba(165, 196, 242, 0.35);
+  --h5-color: #e8c895;
+  --h5-underline: rgba(232, 200, 149, 0.35);
+  --h6-color: #f1f5f9;
+  --h6-bg: rgba(165, 181, 194, 0.12);
+  --h6-border: rgba(165, 181, 194, 0.22);
+  --highlight-bg: #7e57c2;
+  --highlight-text: #ffffff;
+  --highlight-opacity: 1;
+  --sidebar-hover-bg: #6366f1;
+  --code-bg: #0F1419;
+  --code-normal: #E6E1CF;
+  --code-comment: #5C6773;
+  --code-keyword: #FF8F40;
+  --code-string: #AAD94C;
+  --code-function: #FFB454;
+  --code-variable: #E6E1CF;
+  --code-operator: #F29668;
+  /* Container Variables */
+  --container-bg: #090c10;
+  --code-background: var(--code-bg); /* Native Obsidian Code block var */
+  /* Custom Design Tokens */
+  --tr-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-quick: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-elastic: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --shadow-premium: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 2px 8px -1px rgba(0, 0, 0, 0.2);
+  --glow-shadow: 0 0 16px rgba(240, 98, 146, 0.25);
+  --glow-color: rgba(240, 98, 146, 0.5);
+  --border-radius-card: 8px;
+  --border-radius-modal: 12px;
+  --border-radius-button: 6px;
+  --background-modifier-border-hover: rgba(255, 255, 255, 0.15);
+  --background-modifier-border-focus: rgba(240, 98, 146, 0.3);
+}
+
+:root {
+  --default-font: Vollkorn, serif;
+  --font-text: Vollkorn, serif;
+  --font-interface: system-ui, -apple-system, sans-serif;
+  --header-font: Google Sans, var(--font-interface);
+  --inline-title-font: Google Sans, var(--font-interface);
+  --font-mono: JetBrains Mono, Fira Code, monospace;
+}
+
+body {
+  --font-text-override: Vollkorn, serif;
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+}
+
+.cm-scroller {
+  padding-top: 20px !important; /* Add padding to the top of the editor */
+}
+
+.cm-contentContainer {
+  /* Removed margin-top as it breaks CodeMirror 6 coordinate mapping */
+}
+
+.metadata-container {
+  margin-top: 10px;
+  border-bottom: 0.5px solid var(--divider-color);
+}
+.metadata-container .metadata-properties-title {
+  margin-bottom: 0;
+  line-height: 0;
+  font-family: var(--header-font) !important;
+  color: var(--text-muted);
+  font-weight: 400 !important;
+  font-size: 0.9rem !important;
+}
+.metadata-container .metadata-content {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  gap: 5px;
+  flex-wrap: wrap;
+}

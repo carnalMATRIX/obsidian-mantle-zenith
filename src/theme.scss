@@ -1,0 +1,186 @@
+// src/theme.scss
+@use "fonts";
+@use "variables" as *;
+@use "headings";
+@use "typography";
+@use "lists";
+@use "code";
+@use "callouts";
+@use "ui";
+
+/* Light Mode Variables */
+.theme-light {
+    --background-primary: #{$light-bg};
+    --background-secondary: #{$light-bg-subtle};
+    --background-modifier-border: #{$light-border}; 
+    --divider-color: #{$light-border};
+    
+    --text-normal: #{$light-text};
+    --text-muted: #{$light-text-muted};
+    --interactive-accent: #{$light-accent};
+    
+    // Link variables
+    --link-color: var(--interactive-accent);
+    --link-color-hover: var(--interactive-accent);
+    --link-external-color: var(--interactive-accent);
+    --link-external-color-hover: var(--interactive-accent);
+    --link-external-decoration: none;
+    --link-external-decoration-hover: underline;
+    
+    // Applying the Spectrum Hierarchy
+    --h1-color: #2b2738; // Deep aubergine
+    --h2-color: #9b3053; // Muted raspberry
+    --h3-color: #2a6b61; // Muted teal/pine
+    --h4-color: #37538c; // Muted slate blue
+    --h4-underline: rgba(55, 83, 140, 0.35);
+    --h5-color: #8c5c32; // Muted amber
+    --h5-underline: rgba(140, 92, 50, 0.35);
+    --h6-color: #0f172a; // Tailwind slate-900
+    --h6-bg: rgba(82, 92, 104, 0.07);
+    --h6-border: rgba(82, 92, 104, 0.18);
+
+    // Highlights (Indigo Accent)
+    --highlight-bg: #{$h4-color};
+    --highlight-text: #ffffff;
+    --highlight-opacity: 1;
+    --sidebar-hover-bg: #4f46e5;
+
+    // Ayu Light Code Theme (Simplified)
+    --code-bg: #FAFAFA;
+    --code-normal: #5C6166;
+    --code-comment: #ABB0B6;
+    --code-keyword: #F29718;
+    --code-string: #86B300;
+    --code-function: #F29718;
+    --code-variable: #5C6166;
+    --code-operator: #ED9366;
+
+    /* Container Variables */
+    --container-bg: #{$light-container-bg};
+    --code-background: var(--code-bg); /* Native Obsidian Code block var */
+
+    /* Custom Design Tokens */
+    --tr-smooth: #{$tr-smooth};
+    --tr-quick: #{$tr-quick};
+    --tr-elastic: #{$tr-elastic};
+    --shadow-premium: #{$light-shadow};
+    --glow-shadow: #{$glow-shadow-light};
+    --glow-color: rgba(216, 27, 96, 0.4);
+    --border-radius-card: 8px;
+    --border-radius-modal: 12px;
+    --border-radius-button: 6px;
+    --background-modifier-border-hover: rgba(0, 0, 0, 0.15);
+    --background-modifier-border-focus: rgba(216, 27, 96, 0.3);
+    --background-modifier-active-hover: #{$light-bg-mod};
+    --light-bg-mod: #{$light-bg-mod};
+}
+
+/* Dark Mode Variables */
+.theme-dark {
+    --background-primary: #{$dark-bg};
+    --background-secondary: #{$dark-bg-subtle};
+    --background-modifier-border: #{$dark-border};
+    --divider-color: #1c2c43;
+    
+    --text-normal: #{$dark-text};
+    --text-muted: #{$dark-text-muted};
+    --interactive-accent: #{$dark-accent};
+
+    // Link variables
+    --link-color: var(--interactive-accent);
+    --link-color-hover: var(--interactive-accent);
+    --link-external-color: var(--interactive-accent);
+    --link-external-color-hover: var(--interactive-accent);
+    --link-external-decoration: none;
+    --link-external-decoration-hover: underline;
+    
+    // Applying the Spectrum Hierarchy (Same desaturated/pastel spectrum, dark background)
+    --h1-color: #e9ecef; // Soft white-gray
+    --h2-color: #e8a7b8; // Muted rose-pink
+    --h3-color: #a8d8b9; // Muted sage green
+    --h4-color: #a5c4f2; // Muted periwinkle
+    --h4-underline: rgba(165, 196, 242, 0.35);
+    --h5-color: #e8c895; // Muted warm sand
+    --h5-underline: rgba(232, 200, 149, 0.35);
+    --h6-color: #f1f5f9; // Tailwind slate-100
+    --h6-bg: rgba(165, 181, 194, 0.12);
+    --h6-border: rgba(165, 181, 194, 0.22);
+
+    // Highlights (Indigo Accent)
+    --highlight-bg: #7e57c2;
+    --highlight-text: #ffffff;
+    --highlight-opacity: 1;
+    --sidebar-hover-bg: #6366f1;
+
+    // Ayu Dark Code Theme (Simplified)
+    --code-bg: #0F1419;
+    --code-normal: #E6E1CF;
+    --code-comment: #5C6773;
+    --code-keyword: #FF8F40;
+    --code-string: #AAD94C;
+    --code-function: #FFB454;
+    --code-variable: #E6E1CF;
+    --code-operator: #F29668;
+
+    /* Container Variables */
+    --container-bg: #{$dark-container-bg};
+    --code-background: var(--code-bg); /* Native Obsidian Code block var */
+
+    /* Custom Design Tokens */
+    --tr-smooth: #{$tr-smooth};
+    --tr-quick: #{$tr-quick};
+    --tr-elastic: #{$tr-elastic};
+    --shadow-premium: #{$dark-shadow};
+    --glow-shadow: #{$glow-shadow-dark};
+    --glow-color: rgba(240, 98, 146, 0.5);
+    --border-radius-card: 8px;
+    --border-radius-modal: 12px;
+    --border-radius-button: 6px;
+    --background-modifier-border-hover: rgba(255, 255, 255, 0.15);
+    --background-modifier-border-focus: rgba(240, 98, 146, 0.3);
+}
+
+:root {
+    --default-font: #{$font-body};
+    --font-text: #{$font-body};
+    --font-interface: #{$font-interface};
+    --header-font: #{$font-header};
+    --inline-title-font: #{$font-header};
+    --font-mono: #{$font-mono};
+}
+
+body {
+    --font-text-override: #{$font-body};
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+}
+
+.cm-scroller  {
+    padding-top: 20px !important; /* Add padding to the top of the editor */
+}
+
+.cm-contentContainer {
+    /* Removed margin-top as it breaks CodeMirror 6 coordinate mapping */
+}
+
+.metadata-container {
+    margin-top: 10px;
+    border-bottom: 0.5px solid var(--divider-color);
+
+    .metadata-properties-title {
+        margin-bottom: 0;
+        line-height: 0;
+        font-family: var(--header-font) !important;
+        color: var(--text-muted);
+        font-weight: 400 !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .metadata-content {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+}

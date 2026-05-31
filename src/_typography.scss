@@ -1,0 +1,201 @@
+@use "variables" as *;
+
+/* Paragraphs & Text */
+.markdown-rendered p {
+    margin-bottom: 1.2em;
+}
+
+.markdown-rendered p,
+.cm-line {
+    font-family: var(--font-text) !important;
+    font-size: 15px !important;
+    line-height: 1.6;
+    color: var(--text-normal);
+    margin: 0 !important; /* Explicitly zero out margins to prevent CodeMirror 6 mapping issues */
+
+    /* Forces numbers to align uniformly on the baseline */
+    font-variant-numeric: lining-nums;
+}
+
+/* Bold & Italic */
+strong, b, .cm-strong { 
+    font-weight: $bold-weight; 
+    color: #b39ddb !important;
+}
+em, i, .cm-em { font-style: italic; }
+
+/* Highlight */
+mark, 
+.cm-highlight,
+.cm-s-obsidian span.cm-formatting-highlight, 
+.cm-s-obsidian span.cm-highlight {
+    background-color: var(--highlight-bg) !important;
+    color: var(--highlight-text) !important;
+    opacity: var(--highlight-opacity) !important;
+}
+
+/* Blockquotes */
+blockquote {
+    background-color: var(--container-bg);
+    border-left: 4px solid var(--interactive-accent);
+    padding: 1rem;
+    border-radius: 0; /* Optional: Softens the sunken box */
+    margin: 1rem 0;
+}
+
+/* Links */
+a, 
+.internal-link, 
+.external-link, 
+.cm-link, 
+.cm-hmd-internal-link {
+    color: var(--interactive-accent) !important;
+    text-decoration: none !important;
+    &:hover { 
+        text-decoration: underline !important;
+        color: var(--interactive-accent) !important;
+    }
+}
+
+/* Internal Links */
+a.internal-link,
+.internal-link,
+.cm-hmd-internal-link,
+.markdown-rendered .internal-link,
+.markdown-preview-view .internal-link,
+.cm-s-obsidian .cm-hmd-internal-link,
+.cm-s-obsidian span.cm-hmd-internal-link,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link {
+    color: var(--interactive-accent) !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Internal Link Hover Styles */
+a.internal-link:hover,
+.internal-link:hover,
+.cm-hmd-internal-link:hover,
+.markdown-rendered .internal-link:hover,
+.markdown-preview-view .internal-link:hover,
+.cm-s-obsidian .cm-hmd-internal-link:hover,
+.cm-s-obsidian span.cm-hmd-internal-link:hover,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link:hover {
+    color: var(--interactive-accent) !important;
+    text-decoration: underline !important;
+    text-decoration-color: var(--interactive-accent) !important;
+    -webkit-text-decoration-color: var(--interactive-accent) !important;
+    border-bottom: none !important;
+}
+
+div.workspace-tab-header-inner-title, div.status-bar {
+    font-family: var(--header-font) !important;
+}
+
+
+
+
+/* External Links */
+a.external-link,
+.external-link,
+.cm-link,
+.cm-link.external-link,
+.markdown-rendered .external-link,
+.markdown-preview-view .external-link,
+.cm-s-obsidian .cm-link,
+.cm-s-obsidian span.cm-link,
+.markdown-source-view.mod-cm6 .cm-link {
+    background-image: none !important;
+    padding-right: 0 !important;
+    color: var(--interactive-accent) !important;
+    text-decoration: none !important;
+
+    /* Hide native default elements, let ::after be overridden for our custom icon */
+    &::before {
+        display: none !important;
+        content: none !important;
+    }
+    
+    &::after {
+        background-image: none !important;
+    }
+}
+
+/* Suppress icons on formatting, string, and URL elements to prevent double icons */
+.cm-formatting::after,
+.cm-string::after,
+.cm-url::after,
+.cm-formatting-link-string::after,
+span.external-link::after,
+span.external-link::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* Custom External Link Icon Injection */
+a.external-link::after,
+.cm-link:not(.cm-formatting):not(.cm-string):not(.cm-url)::after {
+    content: "" !important;
+    display: inline-block !important;
+    width: 12px !important;
+    height: 12px !important;
+    padding-bottom: 3px !important;
+    margin-left: 4px;
+    vertical-align: middle;
+    background-color: var(--interactive-accent) !important;
+    
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpath d='m21 3-9 9'%3E%3C/path%3E%3Cpath d='M15 3h6v6'%3E%3C/path%3E%3C/svg%3E") !important;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpath d='m21 3-9 9'%3E%3C/path%3E%3Cpath d='M15 3h6v6'%3E%3C/path%3E%3C/svg%3E") !important;
+    
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+}
+
+/* External Link Hover Styles */
+a.external-link:hover,
+.external-link:hover,
+.cm-link:hover,
+.cm-link.external-link:hover,
+.markdown-rendered .external-link:hover,
+.markdown-preview-view .external-link:hover,
+.cm-s-obsidian .cm-link:hover,
+.cm-s-obsidian span.cm-link:hover,
+.markdown-source-view.mod-cm6 .cm-link:hover {
+    color: var(--interactive-accent) !important;
+    text-decoration: underline !important;
+    text-decoration-color: var(--interactive-accent) !important;
+    -webkit-text-decoration-color: var(--interactive-accent) !important;
+    
+    &::after {
+        background-color: var(--interactive-accent) !important;
+    }
+}
+
+
+/* CodeMirror Underlines */
+.cm-underline,
+.cm-s-obsidian .cm-underline,
+span.cm-underline,
+.markdown-source-view.mod-cm6 .cm-underline {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.cm-underline:hover,
+.cm-s-obsidian .cm-underline:hover,
+span.cm-underline:hover,
+.markdown-source-view.mod-cm6 .cm-underline:hover {
+    text-decoration: underline !important;
+    text-decoration-color: var(--interactive-accent) !important;
+    -webkit-text-decoration-color: var(--interactive-accent) !important;
+    border-bottom: none !important;
+}
+
+
+/* HR */
+hr {
+    border: 0;
+    border-top: 1px solid var(--divider-color);
+    margin: 2.5rem 0;
+}

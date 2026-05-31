@@ -1,0 +1,19 @@
+@use "variables" as *;
+
+.callout {
+    background-color: var(--container-bg) !important;
+    border: 1px solid var(--background-modifier-border);
+    /* The callout icon and title will still retain their specific colors (e.g., blue for info, red for error) */
+}
+
+.callout-title {
+    font-family: var(--header-font);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.callout-content {
+    margin-top: 0.5rem;
+}

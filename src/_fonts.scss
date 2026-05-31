@@ -1,0 +1,51 @@
+/* --- Vollkorn Regular Weights --- */
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./fonts/Vollkorn-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./fonts/Vollkorn-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* --- Vollkorn Bold (700) --- */
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./fonts/Vollkorn-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./fonts/Vollkorn-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* --- Google Sans (System/Local fallback - disabled embedding to keep theme size under 1MB) --- */
+/*
+@font-face {
+  font-family: 'Google Sans';
+  src: url('./fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url('./fonts/GoogleSans-Italic-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+*/
+
+$font-body: 'Vollkorn', serif;
+$font-header: 'Google Sans', var(--font-interface);
