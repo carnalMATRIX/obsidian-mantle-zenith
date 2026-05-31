@@ -3,10 +3,6 @@
 > [!IMPORTANT]
 > **Desktop Only**: This theme is designed and optimized specifically for the Obsidian desktop application. Mobile support is not currently planned.
 
-> [!NOTE]
-> **Status: Beta (v1.0.0)**  
-> Zenith is currently in public Beta. Visual elements and style variables may receive minor updates based on feedback.
-
 Zenith is a modern, high-contrast Obsidian desktop theme designed for optimal performance, typography, and visual clarity. It serves as the aesthetic anchor of the **Project Mantle** ecosystem, incorporating depth, subtle glows, and backdrop blurs to turn your workspace into a premium IDE-like experience.
 
 ---
@@ -31,7 +27,7 @@ Zenith is structured around interaction. Every panel, tab, and hover state respo
 
 ## 📥 Installation
 
-### Method A: Via Obsidian Community Themes (Recommended once approved)
+### Method A: Via Obsidian Community Themes (Recommended)
 1. In Obsidian, open **Settings** > **Appearance** > **Themes** > **Manage**.
 2. Search for **Zenith**.
 3. Click **Use** to apply the theme.
