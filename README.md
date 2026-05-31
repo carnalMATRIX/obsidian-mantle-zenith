@@ -1,36 +1,87 @@
-# Zenith Theme (Desktop Only)
+# Zenith Theme
 
 > [!IMPORTANT]
-> **Desktop Only**: This theme is designed and optimized for the Obsidian desktop application. Mobile support is not currently a priority.
+> **Desktop Only**: This theme is designed and optimized specifically for the Obsidian desktop application. Mobile support is not currently planned.
 
-> [!CAUTION]
+> [!NOTE]
 > **Status: Beta (v1.0.0)**  
-> This theme is currently in Alpha. Visual elements and color tokens are subject to change.
+> Zenith is currently in public Beta. Visual elements and style variables may receive minor updates based on feedback.
 
-Zenith is a modern, high-contrast Obsidian theme designed for performance and visual clarity. It serves as the aesthetic foundation for the **Project Mantle** ecosystem, featuring a unique "floating capsule" tab design and a sophisticated color palette.
+Zenith is a modern, high-contrast Obsidian desktop theme designed for optimal performance, typography, and visual clarity. It serves as the aesthetic anchor of the **Project Mantle** ecosystem, incorporating depth, subtle glows, and backdrop blurs to turn your workspace into a premium IDE-like experience.
 
-## Design Philosophy
-Zenith focuses on depth and interaction. It uses subtle glows, backdrop blurs, and smooth transitions to create a "live" feel. It is optimized for both Light Mode (Subtle Parchment) and Dark Mode (IDE Deep Blue), ensuring readability across all environments.
+---
 
-## Features
-- **Floating Capsule Tabs**: A complete redesign of the workspace tab headers for a cleaner, modern look.
-- **Cohesive Palette**: Carefully selected colors for headings (Spectrum logic) and interactive elements.
-- **Mantle Optimized**: Designed to be the primary theme for all Mantle plugins (Kanban, Calendar, etc.), providing them with enhanced styling and integration.
+## 🎨 Design Philosophy
 
-## Installation
+Zenith is structured around interaction. Every panel, tab, and hover state responds to mouse movements with smooth CSS transitions. 
+* **Floating Capsule Tabs:** Reimagines the Obsidian header tab system into floating, rounded capsules that make panel navigation intuitive.
+* **Spectrum-Based Headings:** Implements a distinct color spectrum hierarchy for headings to make scanning long documents effortless.
+* **Dual Palette Modes:** Light Mode features a subtle, eye-friendly "Parchment" style, while Dark Mode uses a dark "IDE Deep Blue" palette.
 
-### Manual Installation
-1. Download the `theme.css` and `manifest.json` from the latest release.
-2. Create a folder named `Zenith` in your vault's `.obsidian/themes/` directory.
-3. Move the downloaded files into that folder.
-4. Open Obsidian and select **Zenith** in **Settings > Appearance > Themes**.
+---
 
-## Development
+## ✨ Key Features
 
-To modify this theme:
-1. Navigate to this directory in your terminal.
-2. Install dependencies: `npm install`
-3. Build the theme: `npm run build` (This compiles the SCSS files into `theme.css`).
-4. For active development, use: `npm run dev`
+* **Capsule Navigation:** Seamless floating capsule tabs for pane management.
+* **Depth & Layering:** Drop shadows, glassmorphism filters, and panel borders create distinct visual hierarchies.
+* **Optimized for Mantle Plugins:** Built-in CSS hooks that pair perfectly with the styling of the Mantle plugin ecosystem (Kanban, Calendar, Docs, Icons, Images, and Otto).
+* **Minimalist UI Controls:** Clean and unobtrusive sidebars that expand smoothly on focus or hover.
 
-The theme source code is located in the `src/` directory and uses modular SCSS for maintainability.
+---
+
+## 📥 Installation
+
+### Method A: Via Obsidian Community Themes (Recommended once approved)
+1. In Obsidian, open **Settings** > **Appearance** > **Themes** > **Manage**.
+2. Search for **Zenith**.
+3. Click **Use** to apply the theme.
+
+### Method B: Via BRAT (Beta Reviewer's Auto-update Tester)
+1. Install the **BRAT** plugin from Obsidian's community store.
+2. In BRAT settings, click **Add Beta theme** and enter:
+   `https://github.com/carnalMATRIX/obsidian-mantle-zenith`
+3. The theme will install and auto-update.
+
+### Method C: Manual Installation
+1. Download `theme.css` and `manifest.json` from the latest [GitHub Release](https://github.com/carnalMATRIX/obsidian-mantle-zenith/releases).
+2. Inside your vault, navigate to `.obsidian/themes/`.
+3. Create a folder named `Zenith` and paste the two downloaded files inside.
+4. Open Obsidian and select **Zenith** in **Settings** > **Appearance** > **Theme**.
+
+---
+
+## 🔍 Troubleshooting
+
+### Theme looks broken or misaligned
+* **Obsidian Version:** Make sure your Obsidian app is up to date (minimum version `1.12.7`).
+* **Conflict with CSS Snippets:** Custom CSS snippets can override Zenith's variables. Go to **Settings** > **Appearance** > **CSS Snippets** and temporarily toggle them off to see if the alignment is restored.
+* **Conflicting Plugins:** Disable any custom layout-altering plugins to check for conflicts.
+
+### Typography or Icons are not rendering
+* **Font Fallbacks:** Zenith is designed to use system-font fallbacks for extreme performance and memory optimization. Make sure you haven't blocked local system fonts.
+* **Mantle Icons:** To get the full icon styling package, install the companion **Mantle Icons** plugin.
+
+---
+
+## 🛠️ Development
+
+If you wish to customize this theme locally:
+1. Clone this repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the compiler in watch mode for live updates:
+   ```bash
+   npm run dev
+   ```
+4. Compile production-optimized assets:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📄 License
+
+Copyright (c) 2026 Ryan Bakker. Released under a **Personal Use License**. Non-commercial, personal use only. Redistribution or modification for distribution is strictly prohibited. See the `LICENSE` file for full terms.
