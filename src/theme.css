@@ -24,19 +24,22 @@
   font-weight: 700;
   font-style: italic;
 }
-/* --- Google Sans --- */
+/* --- Google Sans (System/Local fallback - disabled embedding to keep theme size under 1MB) --- */
+/*
 @font-face {
-  font-family: "Google Sans";
-  src: url("./fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf") format("truetype");
+  font-family: 'Google Sans';
+  src: url('./fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "Google Sans";
-  src: url("./fonts/GoogleSans-Italic-VariableFont_GRAD,opsz,wght.ttf") format("truetype");
+  font-family: 'Google Sans';
+  src: url('./fonts/GoogleSans-Italic-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: italic;
 }
+*/
 /* --- Typography Tokens --- */
 /* --- Mode Palettes --- */
 /* --- Heading Tokens (Spectrum Logic) --- */

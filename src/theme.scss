@@ -73,6 +73,10 @@
     --background-modifier-border-focus: rgba(216, 27, 96, 0.3);
     --background-modifier-active-hover: #{$light-bg-mod};
     --light-bg-mod: #{$light-bg-mod};
+
+    /* Collapse/Fold Gutter Icon Colors */
+    --collapse-icon-color: var(--text-muted);
+    --collapse-icon-color-collapsed: var(--interactive-accent);
 }
 
 /* Dark Mode Variables */
@@ -138,6 +142,10 @@
     --border-radius-button: 6px;
     --background-modifier-border-hover: rgba(255, 255, 255, 0.15);
     --background-modifier-border-focus: rgba(240, 98, 146, 0.3);
+
+    /* Collapse/Fold Gutter Icon Colors */
+    --collapse-icon-color: var(--text-muted);
+    --collapse-icon-color-collapsed: var(--interactive-accent);
 }
 
 :root {
@@ -182,5 +190,35 @@ body {
         flex-direction: row;
         gap: 5px;
         flex-wrap: wrap;
+    }
+}
+
+/* --- Editor Fold Gutter & Reading Mode Collapse Indicators --- */
+.markdown-source-view.mod-cm6 .cm-fold-indicator .collapse-indicator {
+    opacity: 0.55 !important;
+    color: var(--collapse-icon-color) !important;
+    transition: opacity var(--tr-quick), color var(--tr-quick);
+
+    &:hover {
+        opacity: 1 !important;
+        color: var(--interactive-accent) !important;
+    }
+}
+
+/* Ensure the fold indicator glows on hover over its respective gutter element line */
+.markdown-source-view.mod-cm6 .cm-gutterElement:hover .cm-fold-indicator .collapse-indicator {
+    opacity: 1 !important;
+    color: var(--interactive-accent) !important;
+}
+
+/* Reading Mode headings fold indicator */
+.markdown-rendered .heading-collapse-indicator {
+    opacity: 0.55 !important;
+    color: var(--collapse-icon-color) !important;
+    transition: opacity var(--tr-quick), color var(--tr-quick);
+
+    &:hover {
+        opacity: 1 !important;
+        color: var(--interactive-accent) !important;
     }
 }
