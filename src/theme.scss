@@ -197,6 +197,7 @@ body {
 .markdown-source-view.mod-cm6 .cm-fold-indicator .collapse-indicator {
     opacity: 0.55 !important;
     color: var(--collapse-icon-color) !important;
+    transform: none !important;
     transition: opacity var(--tr-quick), color var(--tr-quick);
 
     &:hover {
